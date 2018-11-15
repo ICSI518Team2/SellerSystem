@@ -12,10 +12,7 @@ import com.fusemachine.inventory.domain.Product;
 
 public interface ItemRepository extends JpaRepository<Item,Integer> 
 {
-	//List<Item> findByItemName(String itemName);
-	//public Page<Item> findByItemName(String itemName, Pageable pageable);
-	//public Page<Item> findByItemNameLikeIgnoreCase(String itemName, Pageable pageable);
-	//List<Item> findByProduct_name(String product_name);
-	//public Page<Item> findByProduct_name(String product_name, Pageable pageable);
-	//public Page<Item> findByProduct_nameLikeIgnoreCase(String product_name, Pageable pageable);
+	List<Item> findByItemName(String itemName);
+	public Page<Item> findByItemName(String itemName, Pageable pageable);
+	public Page<Item> findByItemNameLikeIgnoreCase(String itemName, Pageable pageable);
 }

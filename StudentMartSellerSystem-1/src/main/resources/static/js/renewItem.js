@@ -4,7 +4,7 @@
  * */
 function updateImageField()
 {
-	//alert("hello");
+	alert("hello");
 	//get file name
 	var fileFullPath =  document.getElementById("fileUpload").value;
 	var fileName = "";
@@ -20,19 +20,11 @@ function updateImageField()
 	//alert(fileFullPath);
 	//After get the file name, then set "Image" feild with file name
 	document.getElementById("uploadFileName").value = fileName;
-	
-	
-	//alert("Picture uploaded successfully!");
-	
-	//Now change the imagePreview to this path
-	var imagepath =  document.getElementById("imagePreview").src;
-	//alert(imagepath);
-	document.getElementById("imagePreview").src = "/image/"+fileName;
-	//alert(document.getElementById("imagePreview").src);
+	//alert("Picture changed successfully!");
 }
 
-function loadImage() {
-    //alert("Image is loaded");
+function renewImage() {
+    alert("Image is loaded");
     //get the src from uploadFileName if it's not null
     var imagepath =  document.getElementById("imagePreview");
     if(document.getElementById("uploadFileName").value != null)
@@ -45,20 +37,3 @@ function loadImage() {
 	}
     
 }
-
-function renewImage() {
-    //alert("Image is loaded");
-    //get the src from uploadFileName if it's not null
-    var imagepath =  document.getElementById("imagePreview");
-    if(document.getElementById("uploadFileName").value != null)
-	{
-    	imagepath.src = document.getElementById("uploadFileName").value;
-    	
-	}
-    else
-	{
-    	imagepath.src = "/image/spring-boot-file-upload-example.png";
-	}
-    
-}
-

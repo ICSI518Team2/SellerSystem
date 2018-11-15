@@ -23,7 +23,7 @@ public class Item {
 	private String seller_id;
 	private String category;
 	private String cost_price;
-	private String product_name;
+	private String itemName;
 	private Integer quantity;
 	private String selling_price;
 	private Boolean status;
@@ -42,7 +42,7 @@ public class Item {
 		super();
 		//this.id = id;
 		this.seller_id = seller_id;
-		this.product_name = item_name;
+		this.itemName = item_name;
 		this.category = category;
 		this.cost_price = cost_price;
 		this.selling_price = selling_price;
@@ -89,13 +89,13 @@ public class Item {
 		this.cost_price = cost_price;
 	}
 	
-	@Column(name="product_name")
-	public String getProduct_name() {
-		return product_name;
+	@Column(name="item_name")
+	public String getItemName() {
+		return itemName;
 	}
 
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	
 	@Column(name="quantity")
