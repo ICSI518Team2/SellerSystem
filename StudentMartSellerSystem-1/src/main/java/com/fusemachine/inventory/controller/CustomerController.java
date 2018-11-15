@@ -30,7 +30,7 @@ public class CustomerController {
 	@Autowired
 	private ProductRepository productRepository;
 	
-@RequestMapping
+	@RequestMapping
     public String customer(Model model) {
     	model.addAttribute("customer", new Customer());
     	List<Product> productList=new 	ArrayList<Product>();
@@ -42,11 +42,11 @@ public class CustomerController {
     }
 
 
-@RequestMapping(value="/customers")
-public String product(Model model) {
-	model.addAttribute("customer", new Customer());
-    return "customers";
-}
+	@RequestMapping(value="/customers")
+	public String product(Model model) {
+		model.addAttribute("customer", new Customer());
+	    return "customers";
+	}
 
 
 	
