@@ -33,7 +33,9 @@ public class ItemController {
 		
 	int pageNumber=1;
 	//Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "D://image//";
+	//C:\Users\Shark\Downloads\pappu\withBasicSearch-tweaking\src\main\resources\static\image
+    //private static String UPLOADED_FOLDER = "D://image//";
+	private static String UPLOADED_FOLDER = "C:\\Users\\Shark\\Downloads\\pappu\\withBasicSearch-tweaking\\src\\main\\resources\\static\\image\\";
     private static String IMAGE_RELATIVEPATH = "/image/";
 	@Autowired
 	private ItemRepository itemRepository;
