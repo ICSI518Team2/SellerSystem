@@ -20,11 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fusemachine.inventory.domain.Item;
-import com.fusemachine.inventory.domain.Product;
+//import com.fusemachine.inventory.domain.Product;
 import com.fusemachine.inventory.repository.ItemRepository;
-import com.fusemachine.inventory.repository.ProductRepository;
+//import com.fusemachine.inventory.repository.ProductRepository;
 import com.fusemachine.inventory.service.ItemService;
-import com.fusemachine.inventory.service.ProductService;
 @Controller
 public class ItemController {
 	

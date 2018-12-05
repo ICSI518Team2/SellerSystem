@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.fusemachine.inventory.domain.Item;
-import com.fusemachine.inventory.domain.Product;
+//import com.fusemachine.inventory.domain.Product;
 
 public interface ItemService {
 	List<Item> findAll();

@@ -10,9 +10,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fusemachine.inventory.domain.Item;
-import com.fusemachine.inventory.domain.Product;
+//import com.fusemachine.inventory.domain.Product;
 import com.fusemachine.inventory.repository.ItemRepository;
-import com.fusemachine.inventory.repository.ProductRepository;
+//import com.fusemachine.inventory.repository.ProductRepository;
 import com.fusemachine.inventory.service.ItemService;
 
 @Service

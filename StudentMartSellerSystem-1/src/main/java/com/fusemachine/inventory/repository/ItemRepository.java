@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fusemachine.inventory.domain.Item;
 //import com.fusemachine.inventory.domain.Product;
-import com.fusemachine.inventory.domain.Product;
+//import com.fusemachine.inventory.domain.Product;
 
 public interface ItemRepository extends JpaRepository<Item,Integer> 
 {
