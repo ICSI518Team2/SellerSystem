@@ -113,12 +113,12 @@
 		}else{
 			page = 1;
 		}
-		if(url == '/displayproduct/search'){
+		if(url == '/displayitem/search'){
 			console.log("here");
 			page = 1;
 			$.ajax({
 				type:"get",
-				url:'/displayproduct/',
+				url:'/displayitem/',
 				data:{ page : 1, size:5},
 				success: function(res){
 					console.log("insidee document");
@@ -143,7 +143,7 @@
 		
 		$("#searchForm").submit(function(e){
 			e.preventDefault();
-			var url = '/displayproduct/search';
+			var url = '/displayitem/search';
 			searchProduct(url);
 		});
 
@@ -155,6 +155,7 @@
  	function searchProduct(url){
 	 		page=1;
 	 		var searchValue = $('#searchProduct').val();
+	 		alert(searchValue);//debug
 	 		console.log('search value ' , searchValue, page,size );
 	 		$.ajax({
 	 			type:"get",
@@ -198,6 +199,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/item" th:href="@{/item}">Add New Item</a></li>
 					<li><a href="/displayproduct" th:href="@{/displayitem}">Item List</a></li>
+					<li><a href="/emailadmin" th:href="@{/emailadmin}">Contact Admin</a></li>
 					<li>
 					<button type="button" class="btn btn-info" onclick ="window.location.href='http://localhost:8080/allproducts'">Back To Main</button>
 					</li>

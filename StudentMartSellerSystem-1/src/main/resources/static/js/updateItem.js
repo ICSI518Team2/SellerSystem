@@ -62,3 +62,25 @@ function renewImage() {
     
 }
 
+//Send message to admin
+function sendToAdmin()
+{
+	//var selectedTeam = "hello";
+	alert("Your email has been sent successfully! We will get back to you soon.");
+	$.ajax({
+  	  type: "POST",
+  	  url: "sendMail",
+  	  /*
+  	  dataType: "json",
+  	  contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(selectedTeam),
+        success: function (data) { alert(data); },
+        failure: function (errMsg) {
+            alert(errMsg);
+        }
+        */
+  	});
+
+}
+
+
