@@ -26,8 +26,8 @@ public class EmailController {
     @PostMapping("/sendMail")
     public void sendMail() {
     	System.out.println("send mail!");
-    	String recevier = "yunweijiangchn@gmail.com";
-    	//String recevier = "Sellitdown@gmail.com";
+    	//String recevier = "yunweijiangchn@gmail.com";
+    	String recevier = "Sellitdown@gmail.com";
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 

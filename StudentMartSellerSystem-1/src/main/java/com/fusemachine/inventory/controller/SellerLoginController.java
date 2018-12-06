@@ -33,6 +33,7 @@ import com.fusemachine.inventory.domain.Item;
 import com.fusemachine.inventory.domain.User;
 //import com.fusemachine.inventory.domain.Product;
 import com.fusemachine.inventory.repository.ItemRepository;
+import com.fusemachine.inventory.repository.UserRepository;
 //import com.fusemachine.inventory.repository.ProductRepository;
 import com.fusemachine.inventory.service.ItemService;
 import com.fusemachine.inventory.service.UserService;
@@ -40,9 +41,11 @@ import com.fusemachine.inventory.service.UserService;
 public class SellerLoginController {	
 	@Autowired
 	private UserService userService;
-	
+	@Autowired
+	private UserRepository userRepository;
 	public static String userEmail;
 	public static String userName;
+	public static String password;
 	@RequestMapping(value="/login")
     public String Login()
 	{
@@ -77,7 +80,16 @@ public class SellerLoginController {
     	//only leave the image name without static directory
     	//item.setImage_path(trimItemImagePath(item.getImage_path()));
         model.addAttribute("user", user);
+        this.password = user.getPassword();
         return "myprofile";
+    }
+	
+	@RequestMapping(value="/myprofile",method = RequestMethod.POST)
+    public String itemSubmit(@ModelAttribute User user) {
+		user.setPassword(this.password);
+		//item.setImage_path(IMAGE_RELATIVEPATH+item.getImage_path());
+		user = this.userRepository.save(user);
+    	return "myprofile";
     }
 	 
 }

@@ -91,8 +91,8 @@ function loginCheck()
 	var id = userid.value;
     if(userid.value != "" && password.value != "" )
 	{
-    	alert(userid.value);
-    	alert("login!");
+    	//alert(userid.value);
+    	//alert("login!");
     	$.ajax({
       	  type: "POST",
       	  url: "sellerLogin",
