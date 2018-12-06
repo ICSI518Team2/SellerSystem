@@ -72,5 +72,14 @@ public class ItemServiceJpaImpl implements ItemService{
 		return this.itemrepository.findByItemNameLikeIgnoreCase(name, pageable);
 
 	}
+	
+	@Override
+	public Page<Item> getSearchItemsBySellerID(String sellerId, Integer page,
+			Integer size) {
+		// TODO Auto-generated method stub
+		Pageable pageable = new PageRequest(page, size);
+		return this.itemrepository.findBySellerIdLikeIgnoreCase(sellerId, pageable);
+
+	}
 
 }

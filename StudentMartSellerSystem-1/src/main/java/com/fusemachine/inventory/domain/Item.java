@@ -20,7 +20,7 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String seller_id;
+	private String sellerId;
 	private String category;
 	private String cost_price;
 	private String itemName;
@@ -41,7 +41,7 @@ public class Item {
 			 Boolean status,String description,String image_path) {
 		super();
 		//this.id = id;
-		this.seller_id = seller_id;
+		this.sellerId = seller_id;
 		this.itemName = item_name;
 		this.category = category;
 		this.cost_price = cost_price;
@@ -63,11 +63,11 @@ public class Item {
 	
 	@Column(name="seller_id", length = 45)
 	public String getSeller_id() {
-		return seller_id;
+		return sellerId;
 	}
 
 	public void setSeller_id(String seller_id) {
-		this.seller_id = seller_id;
+		this.sellerId = seller_id;
 	}
 	
 	

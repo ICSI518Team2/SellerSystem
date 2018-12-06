@@ -47,7 +47,9 @@ public class ItemController {
 	@RequestMapping(value="/displayitem",method = RequestMethod.GET)
 	public String getItems(@RequestParam (required = false, value = "page", defaultValue = "1") Integer page,
 			@RequestParam (required = false, value = "size",defaultValue = "5") Integer size, Model model){				
-		Page<Item> itemList = this.itemService.findAllItems(page-1, size);
+		//Page<Item> itemList = this.itemService.findAllItems(page-1, size);
+		System.out.println("Current user is "+SellerLoginController.userName);
+		Page<Item> itemList = this.itemService.getSearchItemsBySellerID(SellerLoginController.userName,page-1, size);
 		model.addAttribute("item",itemList.getContent());
 		model.addAttribute("totalPage", itemList.getTotalPages());
 		model.addAttribute("currentPage", itemList.getNumber());

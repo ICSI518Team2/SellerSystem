@@ -83,4 +83,48 @@ function sendToAdmin()
 
 }
 
+//Seller login validation check
+function loginCheck()
+{
+	var userid =  document.getElementById("userid");
+	var password =  document.getElementById("password");
+	var id = userid.value;
+    if(userid.value != "" && password.value != "" )
+	{
+    	alert(userid.value);
+    	alert("login!");
+    	$.ajax({
+      	  type: "POST",
+      	  url: "sellerLogin",
+      	  
+      	  dataType: "json",
+      	  contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(id),
+      	  	//data: id,
+            success: function (data) { alert(data); },
+            failure: function (errMsg) {
+                alert(errMsg);
+            }
+            
+      	});
+    	
+	}
+    else
+	{
+    	if(userid.value == "" && password.value == "")
+		{
+    		alert("Both user id and password are empty!")
+		}
+    	else if(userid.value == "")
+    	{
+    		alert("user id is empty!");
+    	}
+    	else
+		{
+    		alert("password is empty!")
+		}	
+	}
+	
+}
+
 
