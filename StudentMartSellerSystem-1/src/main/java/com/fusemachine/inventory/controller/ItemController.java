@@ -80,6 +80,7 @@ public class ItemController {
     public String itemSubmit(@ModelAttribute Item item) {
 		
 		item.setImage_path(IMAGE_RELATIVEPATH+item.getImage_path());
+		item.setSeller_id(SellerLoginController.userName);
 		item = this.itemRepository.save(item);
     	return "itemdisplay";
     }
@@ -96,6 +97,7 @@ public class ItemController {
     	Item item = itemService.findById(Integer.parseInt(id));
     	//only leave the image name without static directory
     	//item.setImage_path(trimItemImagePath(item.getImage_path()));
+    	item.setSeller_id(SellerLoginController.userName);
         model.addAttribute("item", item);
         return "updateitem";
     }
@@ -104,6 +106,7 @@ public class ItemController {
     @RequestMapping(value="/updateitem",method = RequestMethod.POST)
     public String productUpdate(@ModelAttribute Item item) {
     	item.setImage_path(IMAGE_RELATIVEPATH+item.getImage_path());
+    	item.setSeller_id(SellerLoginController.userName);
     	item = this.itemRepository.save(item);
     	return "itemdisplay";
     }
