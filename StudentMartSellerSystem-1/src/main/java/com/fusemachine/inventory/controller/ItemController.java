@@ -39,7 +39,7 @@ public class ItemController {
 	@Autowired
 	private ItemRepository itemRepository;
 	
-	@GetMapping(value="/home")
+	@RequestMapping(value="/home")
     public String homepage(){
         return "home";
     }

@@ -8,4 +8,5 @@ public interface UserService {
 	public User findUserByEmailID(String emailID);
 	//After edit user information, need to save data to db
 	public void saveUser(User user);
+	public User findUserByName(String name);
 }

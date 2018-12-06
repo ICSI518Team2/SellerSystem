@@ -49,7 +49,7 @@ public class SellerLoginController {
         return "login";
     }
 	@RequestMapping("/sellerLogin")
-    public ModelAndView  CheckValidation(@RequestBody String userid) 
+    public String  CheckValidation(@RequestBody String userid) 
  	{
 		String currentid = userid;
 		System.out.println(currentid);
@@ -64,9 +64,20 @@ public class SellerLoginController {
         }
     	System.out.println(currentid);
     	this.userName = currentid;//use user name to map all item
-    	//return "home";
-    	return new ModelAndView("home");
+    	return "home";
+    	//return new ModelAndView("home");
     }
-	 
+	/*
+	@RequestMapping("/myprofile")
+	public 
+	 */
+	@RequestMapping("/myprofile")
+    public String view(Model model) {
+    	User user = userService.findUserByName(userName);
+    	//only leave the image name without static directory
+    	//item.setImage_path(trimItemImagePath(item.getImage_path()));
+        model.addAttribute("user", user);
+        return "myprofile";
+    }
 	 
 }

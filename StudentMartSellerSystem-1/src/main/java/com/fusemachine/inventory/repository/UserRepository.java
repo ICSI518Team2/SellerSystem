@@ -7,4 +7,5 @@ import com.fusemachine.inventory.domain.User;
 
 public interface UserRepository extends  JpaRepository<User,Integer>{
 	public User findByEmailID(String emailID);
+	public User findByName(String name);
 }
