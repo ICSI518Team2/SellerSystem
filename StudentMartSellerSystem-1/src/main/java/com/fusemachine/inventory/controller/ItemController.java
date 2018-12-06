@@ -60,7 +60,10 @@ public class ItemController {
 	
 	@RequestMapping(value="/item")
     public String item(Model model) {
-    	model.addAttribute("item", new Item());
+		Item item = new Item();
+		item.setSeller_id(SellerLoginController.userName);
+		model.addAttribute("item", item);		
+    	//model.addAttribute("item", new Item());
         return "item";
     }
 	
